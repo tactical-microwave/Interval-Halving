@@ -7,8 +7,6 @@ a=float(input("Enter Lower limit:"))
 b=float(input("Enter Upper limit:"))
 E=float(input("Enter final accuracy:"))
 choice=int(input("For MINIMIZATION press 1. For MAXIMIZATION press 2. ENTER:"))
-
-
 count=1
 if(choice==1):
     print("YOU HAVE CHOSEN MINIMIZATION OF ",function)
@@ -97,8 +95,3 @@ elif(choice==2):
         count+=1
 else:
     print("Invalid choice. Restart and press 1 for MINIMIZATION and press 2 for MAXIMIZATION")
-
-
-
-
-1000/(((x-6)/(0.6*x))+(1/(0.025*x**2)))
