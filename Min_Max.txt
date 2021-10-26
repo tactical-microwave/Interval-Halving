@@ -1,0 +1,104 @@
+def f(x):
+    f=eval(function)
+    return f
+choice=0
+function=input("Enter function:")
+a=float(input("Enter Lower limit:"))
+b=float(input("Enter Upper limit:"))
+E=float(input("Enter final accuracy:"))
+choice=int(input("For MINIMIZATION press 1. For MAXIMIZATION press 2. ENTER:"))
+
+
+count=1
+if(choice==1):
+    print("YOU HAVE CHOSEN MINIMIZATION OF ",function)
+    xm=(a+b)/2
+    fm=f(xm)
+    while((b-a)>E):
+        fa=f(a)
+        fb=f(b)
+        x1=(a+xm)/2
+        x2=(b+xm)/2
+        f1=f(x1)
+        f2=f(x2)
+        print("-----For the Start of Iteration number ",count,"-----")
+        print("a:",a,"  x1:",x1," xm:",xm," x2:",x2,"   b:",b,"     b-a:",(b-a))
+        print("f(x1)=",f1,"  f(xm)=",fm,"   f(x2)=",f2)
+        if(f1<fm):
+            b=xm
+            xm=x1
+            fm=f(xm)
+            x1=(a+xm)/2
+            x2=(b+xm)/2
+            print("For the End of Iteration number ",count)
+            print("a:",a,"  x1:",x1," xm:",xm," x2:",x2,"   b:",b,"     b-a:",(b-a))
+        elif(f2<fm):
+            a=xm
+            xm=x2
+            fm=f(xm)
+            x1=(a+xm)/2
+            x2=(b+xm)/2
+            print("For the End of Iteration number ",count)
+            print("a:",a,"  x1:",x1," xm:",xm," x2:",x2,"   b:",b,"     b-a:",(b-a))
+        else:
+            a=x1
+            b=x2
+            x1=(a+xm)/2
+            x2=(b+xm)/2
+            print("For the End of Iteration number ",count)
+            print("a:",a,"  x1:",x1," xm:",xm," x2:",x2,"   b:",b,"     b-a:",(b-a))
+        if((b-a)<E):
+            xf=((a+b)/2)
+            xf_delta=(b-a)/2
+            print("|||||    FINAL SOLUTION IS: ",xf,"+-",xf_delta,"     |||||")
+        count+=1
+elif(choice==2):
+    print("YOU HAVE CHOSEN MAXIMIZATION OF  ",function)
+    function="-1*"+function
+    xm=(a+b)/2
+    fm=f(xm)
+    while((b-a)>E):
+        fa=f(a)
+        fb=f(b)
+        x1=(a+xm)/2
+        x2=(b+xm)/2
+        f1=f(x1)
+        f2=f(x2)
+        print("-----For the Start of Iteration number ",count,"-----")
+        print("a:",a,"  x1:",x1," xm:",xm," x2:",x2,"   b:",b,"     b-a:",(b-a))
+        print("f(x1)=",f1,"  f(xm)=",fm,"   f(x2)=",f2)
+        if(f1<fm):
+            b=xm
+            xm=x1
+            fm=f(xm)
+            x1=(a+xm)/2
+            x2=(b+xm)/2
+            print("For the End of Iteration number ",count)
+            print("a:",a,"  x1:",x1," xm:",xm," x2:",x2,"   b:",b,"     b-a:",(b-a))
+        elif(f2<fm):
+            a=xm
+            xm=x2
+            fm=f(xm)
+            x1=(a+xm)/2
+            x2=(b+xm)/2
+            print("For the End of Iteration number ",count)
+            print("a:",a,"  x1:",x1," xm:",xm," x2:",x2,"   b:",b,"     b-a:",(b-a))
+        else:
+            a=x1
+            b=x2
+            x1=(a+xm)/2
+            x2=(b+xm)/2
+            print("For the End of Iteration number ",count)
+            print("a:",a,"  x1:",x1," xm:",xm," x2:",x2,"   b:",b,"     b-a:",(b-a))
+        if((b-a)<E):
+            xf=((a+b)/2)
+            xf_delta=(b-a)/2
+            print("|||||    FINAL SOLUTION IS: ",xf,"+-",xf_delta,"     |||||")
+        count+=1
+else:
+    print("Invalid choice. Restart and press 1 for MINIMIZATION and press 2 for MAXIMIZATION")
+
+
+
+
+1000/(((x-6)/(0.6*x))+(1/(0.025*x**2)))
